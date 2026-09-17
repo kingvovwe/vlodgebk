@@ -6,6 +6,7 @@ import { PORT, API_PREFIX } from "./config/env.config.js";
 import { logger } from "./middleware/basic.middleware.js";
 
 import authRoute from "./router/auth.route.js";
+import apartmentRoute from "./router/apartment.router.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(logger);
 app.use(cookieParser());
 
 app.use(`${API_PREFIX}/auth`, authRoute);
+app.use(`${API_PREFIX}/apartment`, apartmentRoute);
 
 
 (async () => {
